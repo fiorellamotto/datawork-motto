@@ -41,7 +41,9 @@ footer{
     grid-template-columns: auto auto;
     justify-content: center;
     width: 100%;
-    background-color: #2174d4;
+    background: rgb(9,105,159);
+    background: linear-gradient(0deg, rgba(9,105,159,0.6755077030812324) 50%, rgba(45,108,253,0.8015581232492998) 100%);
+
     
 }
 footer ul{
@@ -69,7 +71,8 @@ h2{
 }
 header{
     text-align: center;
-    background-color: #1473dfd2;
+    background: rgb(9,105,159);
+    background: linear-gradient(0deg, rgba(9,105,159,0.6755077030812324) 50%, rgba(45,108,253,0.8015581232492998) 100%);
 }
 .contacto{
     border: solid 1px black;
@@ -92,7 +95,8 @@ h1{
     font-size:xx-large;
 }
 .menu{
-    background-color: #2174d4;
+    background: rgb(16,92,157);
+    background: linear-gradient(90deg, rgba(16,92,157,0) 25%, rgba(16,92,157,0.36738445378151263) 50%, rgba(16,92,157,0) 75%);
     display: flex;
     justify-content: center;
     height: 75px;
