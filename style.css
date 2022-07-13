@@ -43,7 +43,6 @@ footer{
     width: 100%;
     background: rgb(9,105,159);
     background: linear-gradient(0deg, rgba(9,105,159,0.6755077030812324) 50%, rgba(45,108,253,0.8015581232492998) 100%);
-
     
 }
 footer ul{
@@ -91,8 +90,31 @@ header{
     object-fit: cover;
 }
 
-h1{
-    font-size:xx-large;
+header h1{
+    animation: bounce;
+    animation-duration: 2s;
+    font-size:33px;
+      }
+      @keyframes bounce {
+        0% {
+           opacity: 0;
+           transform: translateY(-2000px);
+        }
+        60% {
+           opacity: 1;
+           transform: translateY(30px);
+        }
+        80% {
+           transform: translateY(-10px);
+        }
+        100% {
+           transform: translateY(0);
+        }
+     }
+header img{
+    padding: 30px;
+    height: 150px;
+    width: 150px;
 }
 .menu{
     background: rgb(16,92,157);
