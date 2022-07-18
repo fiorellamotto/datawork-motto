@@ -93,6 +93,11 @@ header img{
     width: 200px;
     height: 200px;
 }
+.navbar-toggler{
+    background-color: white;
+    margin-left: 20px;
+}
+
 
 @media screen and (max-width:480px) {
     .layout{
