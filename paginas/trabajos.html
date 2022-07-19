@@ -5,6 +5,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 	<link rel="stylesheet" href="../style.css">
 	<title>Datawork</title>
 </head>
@@ -14,92 +16,89 @@
 		<img src="../imagenes/tuercas.png" alt="Logo Datawork">
 		<h1 class="animate__animated animate__bounceInDown">DATAWORK</h1>
 
-		<nav class="navbar navbar-expand-lg navbar-light" id="navbar">
-			<div class="container-fluid ">
-				<div class="collapse navbar-collapse justify-content-center text-black" id="navbarNav">
-					<ul class="navbar-nav bg-light" id="navbar">
-						<li class="nav-item">
-							<a class="nav-link" aria-current="page" href="../index.html">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="./contacto.html">Contacto</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Trabajos</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="./quienes-somos.html">Quiénes somos</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="./contacto.html">Ubicacion</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+		<nav class="navbar navbar-expand-lg bg-primary">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Trabajos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="quienes-somos.html">Quienes Somos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="ubicacion.html">Ubicación</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
 	</header>
 	<main class="principal">
-		<div class="container" id="cards">
-			<h2>Trabajos</h2>
-			<h3>Estos son algunos de nuestros trabajos realizados</h3>
-			<div class="row row-cols-1 row-cols-md-4 g-3">
-				<div class="col">
-					<div class="card">
-						<img src="../imagenes/frascos.jpg"" class=" card-img-top" alt="...">
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-						<img src="../imagenes/kit-jardin.jpg" class="card-img-top" alt="...">
-
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-						<img src="../imagenes/sujeta.jpg" class="card-img-top" alt="...">
-
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-						<img src="../imagenes/llaveros1.jpg" class="card-img-top" alt="...">
-
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-						<img src="../imagenes/taza1.jpg" class="card-img-top" alt="...">
-
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-						<img src="../imagenes/llaveros2.jpg" class="card-img-top" alt="...">
-
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-						<img src="../imagenes/taza2.jpg" class="card-img-top" alt="...">
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-						<img src="../imagenes/llaveros3.jpg" class="card-img-top" alt="...">
-
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-						<img src="../imagenes/taza3.jpg" class="card-img-top" alt="...">
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-						<img src="../imagenes/llaveros4.jpg" class="card-img-top" alt="...">
-					</div>
-				</div>
+		<div class="carrusel">
+		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+			<div class="carousel-indicators">
+			  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+			  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+			  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+			  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+			  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+			  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
+			  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
 			</div>
+			<div class="carousel-inner">
+			  <div class="carousel-item active">
+				<img src="../imagenes/frascos.jpg" class="d-block w-100" alt="frascos">
+			  </div>
+			  <div class="carousel-item">
+				<img src="../imagenes/kit-jardin.jpg" class="d-block w-100" alt="kit-jardin">
+			  </div>
+			  <div class="carousel-item">
+				<img src="../imagenes/sujeta.jpg" class="d-block w-100" alt="sujeta">
+			  </div>
+			  <div class="carousel-item">
+				<img src="../imagenes/llaveros1.jpg" class="d-block w-100" alt="llaveros1">
+			  </div>
+			  <div class="carousel-item">
+				<img src="../imagenes/taza1.jpg" class="d-block w-100" alt="taza1">
+			  </div>
+			  <div class="carousel-item">
+				<img src="../imagenes/llaveros2.jpg" class="d-block w-100" alt="llaveros2">
+			  </div>
+			  <div class="carousel-item">
+				<img src="../imagenes/taza2.jpg" class="d-block w-100" alt="taza2">
+			  </div>
+			  <div class="carousel-item">
+				<img src="../imagenes/llaveros3.jpg" class="d-block w-100" alt="llaveros3">
+			  </div>
+			  <div class="carousel-item">
+				<img src="../imagenes/taza3.jpg" class="d-block w-100" alt="taza3">
+			  </div>
+			  <div class="carousel-item">
+				<img src="../imagenes/llaveros4.jpg" class="d-block w-100" alt="llaveros4">
+			  </div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Next</span>
+			</button>
+		  </div>
 		</div>
 	</main>
 	<footer class="text-center text-white bg-primary">
@@ -118,11 +117,9 @@
 			</section>
 		</div>
 	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+		crossorigin="anonymous"></script>
 </body>
-<link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-	crossorigin="anonymous"></script>
 
 </html>
