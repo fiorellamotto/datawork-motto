@@ -1,136 +1,149 @@
+body {
+    margin: 0;
+    padding: 0;
+}
 
-body{
-   margin: 0;
-   padding: 0;
+.contacto {
+    width: 340px;
+    height: 400px;
+    background-color: rgba(13, 109, 253, 0.795);
+    border-radius: 20px;
+    box-shadow: 0 0 40px -10px #000;
+    margin: calc(300px - 220px) auto;
+    padding: 20px 30px;
+    max-width: calc(400px -40px);
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
-.contacto{
-width: 340px;
-height: 440px;
-background-color:rgba(13, 109, 253, 0.795);
-border-radius: 20px;
-box-shadow: 0 0 40px -10px #000;
-margin: calc(300px - 220px) auto;
-padding: 20px 30px;
-max-width: calc(400px -40px);
-box-sizing: border-box;
-font-family: 'Times New Roman', Times, serif;
-}
-.contacto div{
+
+.contacto div {
     padding: 20px;
 }
-.nav-item{
-    font-family:Arial, Helvetica, sans-serif;
+
+.nav-item {
+    font-family: Arial, Helvetica, sans-serif;
     background-color: white;
-  
-}
-.carrusel{
-width: 50%;
-margin-left: 25%;
+
 }
 
-.navbar-nav{
+.carrusel {
+    width: 50%;
+    margin-left: 25%;
+}
+
+.navbar-nav {
     margin: auto;
 }
 
-#logo_navbar{
+#logo_navbar {
     width: 10%;
     height: 10%;
     text-align: center;
 }
-.pie{
+
+.pie {
     grid-area: footer;
 }
 
 
-#cards{
+#cards {
 
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
-#cards h2{
+#cards h2 {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
 }
 
-#cards h3{
+#cards h3 {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
 
 }
 
-.card img{
+.card img {
     padding: 12px 12px;
 }
 
-h2{
-    font-family:'Times New Roman', Times, serif;
+h2 {
+    font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
 }
 
- header{
+header {
     text-align: center;
-    background-color:rgba(13, 109, 253);
+    background-color: rgba(13, 109, 253);
 }
- 
-.galeria-trabajos{
+
+.galeria-trabajos {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
-    grid-auto-rows:auto;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: auto;
     padding: 20px;
     grid-gap: 10px;
 }
-.galeria-trabajos img{
+
+.galeria-trabajos img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-header h1{
+header h1 {
     animation: bounce;
     animation-duration: 2s;
-    font-size:33px;
-      }
-      @keyframes bounce {
-        0% {
-           opacity: 0;
-           transform: translateY(-2000px);
-        }
-        60% {
-           opacity: 1;
-           transform: translateY(30px);
-        }
-        80% {
-           transform: translateY(-10px);
-        }
-        100% {
-           transform: translateY(0);
-        }
-     }
-header img{
+    font-size: 33px;
+}
+
+@keyframes bounce {
+    0% {
+        opacity: 0;
+        transform: translateY(-2000px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+
+    80% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+header img {
     padding: 30px;
     height: 150px;
     width: 150px;
 }
-.nav-item{
-  border: none;
-  background-color: white;
-  text-align: center;
-  margin: 4px 2px;
-  transition: 0.3s;
+
+.nav-item {
+    border: none;
+    background-color: white;
+    text-align: center;
+    margin: 4px 2px;
+    transition: 0.3s;
 }
-.nav-item:hover{
+
+.nav-item:hover {
     background-color: rgb(52, 52, 255);
     color: white;
 }
+
 .btn-enviar {
     background-color: whitesmoke;
     border: none;
     color: black;
     opacity: 0.6;
     transition: 0.3s;
-  }
-  
+}
+
 .btn-enviar:hover {
     opacity: 1
 }
@@ -139,20 +152,26 @@ header img{
     width: 200px;
     height: 200px;
 }
-.navbar-toggler{
+
+.navbar-toggler {
     background-color: white;
     margin-left: 20px;
 }
 
 
 @media screen and (max-width:480px) {
-    .layout{
-        grid-template-columns: repeat(auto-fill,1fr);
+    .layout {
+        grid-template-columns: repeat(auto-fill, 1fr);
     }
-    .grid-container{
+
+    .grid-container {
         grid-template-columns: auto;
-    
-    }
 
     }
 
+    .contacto {
+        width: 300px;
+        height: 340px;
+    }
+
+}
