@@ -1,6 +1,10 @@
 body {
-    margin: 0;
-    padding: 0;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+footer{
+    margin-top: auto;
 }
 
 .contacto {
@@ -26,6 +30,7 @@ body {
 
 }
 
+
 .carrusel {
     width: 50%;
     margin-left: 25%;
@@ -44,7 +49,14 @@ body {
 .pie {
     grid-area: footer;
 }
-
+.mapa{
+    padding: auto;
+    text-align: center;
+}
+.mapa section{
+    display: flex;
+    justify-content: center;
+}
 
 #cards {
 
@@ -62,6 +74,9 @@ body {
     justify-content: center;
 
 }
+.card-title{
+    text-align: center;
+}
 
 .card img {
     padding: 12px 12px;
@@ -75,20 +90,6 @@ h2 {
 header {
     text-align: center;
     background-color: rgba(13, 109, 253);
-}
-
-.galeria-trabajos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: auto;
-    padding: 20px;
-    grid-gap: 10px;
-}
-
-.galeria-trabajos img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 header h1 {
@@ -174,4 +175,7 @@ header img {
         height: 340px;
     }
 
+}
+.section1{
+    padding: 20px;
 }
