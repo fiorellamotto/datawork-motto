@@ -4,13 +4,11 @@
     margin-bottom: 30px;
     
     h2 {
-        display: flex;
-        justify-content: center;
+        @extend .extd;
     }
 
     h3 {
-        display: flex;
-        justify-content: center;
+        @extend .extd;
 
     }
 

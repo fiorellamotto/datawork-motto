@@ -1,3 +1,23 @@
-$bgcolor: rgba(13, 109, 253, 0.795);
-$bgcolornav: white;
-$bgcolorheader: rgba(13, 109, 253);
+// $bgcolor: rgba(13, 109, 253, 0.795);
+// $bgcolornav: white;
+// $bgcolorheader: rgba(13, 109, 253);
+$colores: (
+    "color-header": rgba(13, 109, 253),
+    "color-nav": white,
+    "color-contacto": rgba(13, 109, 253),
+    "color-hover": rgb(52,52,255)
+);
+@mixin boton($bgColor, $textColor) {
+    background-color: $bgColor;
+    border: none;
+    color: $textColor;
+    opacity: 0.6;
+    transition: 0.3s;
+        :hover {
+        opacity: 1
+    }
+}
+.extd{
+    display: flex;
+    justify-content: center;
+}

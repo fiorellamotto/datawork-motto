@@ -2,7 +2,6 @@
     padding: auto;
     text-align: center;
     section{
-        display: flex;
-        justify-content: center;
+        @extend .extd;
     }
 }

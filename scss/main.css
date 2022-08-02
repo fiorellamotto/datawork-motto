@@ -61,7 +61,7 @@ h2 {
 
 header {
   text-align: center;
-  background-color: rgb(13, 109, 253);
+  background-color: map-g;
 }
 header h1 {
   -webkit-animation: bounce;
@@ -157,4 +157,15 @@ header img {
 .mapa section {
   display: flex;
   justify-content: center;
+}
+
+.section1 {
+  padding: 20px;
+  margin-top: auto;
+  text-align: center;
+}
+
+.carrusel {
+  width: 50%;
+  margin-top: auto;
 }/*# sourceMappingURL=main.css.map */

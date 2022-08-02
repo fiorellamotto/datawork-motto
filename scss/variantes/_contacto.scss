@@ -2,7 +2,7 @@
 .contacto {
     width: 340px;
     height: 400px;
-    background-color: $bgcolor;
+    background-color: map-get ($colores,"color-contacto");
     border-radius: 20px;
     box-shadow: 0 0 40px -10px #000;
     margin: calc(300px - 220px) auto;
@@ -14,9 +14,8 @@
     }
 }
 .btn-enviar {
-    background-color: whitesmoke;
+    @include boton (whitesmoke, black);
     border: none;
-    color: black;
     opacity: 0.6;
     transition: 0.3s;
         :hover {

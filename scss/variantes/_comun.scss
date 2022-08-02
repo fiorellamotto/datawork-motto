@@ -14,8 +14,8 @@ h2 {
     
 header {
     text-align: center;
-    background-color: $bgcolorheader;
-    
+    background-color: map-get ($colores ,"color-header");
+
         h1 {
         animation: bounce;
         animation-duration: 2s;
