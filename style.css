@@ -24,16 +24,14 @@ footer{
     padding: 20px;
 }
 
+.carrusel {
+    width: 50%;
+    margin-top: auto;
+}
 .nav-item {
     font-family: Arial, Helvetica, sans-serif;
     background-color: white;
 
-}
-
-
-.carrusel {
-    width: 50%;
-    margin-left: 25%;
 }
 
 .navbar-nav {
@@ -45,7 +43,6 @@ footer{
     height: 10%;
     text-align: center;
 }
-
 .pie {
     grid-area: footer;
 }
@@ -98,7 +95,7 @@ header h1 {
     font-size: 33px;
 }
 
-@keyframes bounce {
+ @keyframes bounce {
     0% {
         opacity: 0;
         transform: translateY(-2000px);
@@ -122,8 +119,7 @@ header img {
     padding: 30px;
     height: 150px;
     width: 150px;
-}
-
+} 
 .nav-item {
     border: none;
     background-color: white;
@@ -135,7 +131,7 @@ header img {
 .nav-item:hover {
     background-color: rgb(52, 52, 255);
     color: white;
-}
+} */
 
 .btn-enviar {
     background-color: whitesmoke;
@@ -154,10 +150,10 @@ header img {
     height: 200px;
 }
 
-.navbar-toggler {
+/* .navbar-toggler {
     background-color: white;
     margin-left: 20px;
-}
+} */
 
 
 @media screen and (max-width:480px) {
