@@ -32,4 +32,23 @@ function finalizarCompra(){
     alert( `Gracias por su compra, total a pagar: $ ${total}`);
 }
 let arrayProductos = [];
-let opcion
+let opcion = prompt(
+    "Ingrese una opcion: /n 1: Elegir producto /n 3: Finalizar compra /n 4: Salir"
+);
+
+while (opcion !== "4") {
+    if(opcion === "1") {
+        cargarProducto(arrayProductos);
+        }
+    if(opcion === "2") {
+        mostrarProducto(arrayProductos);
+    }   
+    if(opcion === "3") {
+        finalizarCompra(arrayProductos);
+    }
+
+opcion = prompt(
+    "Vuelva a ingresar una opción: /n 1: Seguir Comprando /n 2: Ver el carrito en consola al finalizar /n 3: Finalizar"
+);
+}
+alert("Pedido realizado, gracias!");
