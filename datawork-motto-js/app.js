@@ -11,10 +11,10 @@ let precios = [
     {tipo: "Llavero Acrílico", precio: "200"},
 ];
 function cargarProducto(arrayProductos) {
-    let tipo = prompt("Ingrese el material elegido");
+    let tipo = prompt("Ingrese el producto elegido");
     let precio = parseInt(prompt("Ingrese el precio"));
     let color = prompt("¿Qué color queres?");
-    const buevoProducto = new Producto(tipo, precio, color);
+    const nuevoProducto = new Producto(tipo, precio, color);
     arrayProductos.push(nuevoProducto);
     console.log("Producto añadido al carrito");
 }
@@ -22,7 +22,7 @@ function cargarProducto(arrayProductos) {
 function mostrarProducto() {
     arrayProductos.forEach((producto) => {
         console.log(
-        `Eligió ${producto.marca} por un precio de ${prodicto.precio} en color ${producto.color}`
+        `Eligió ${producto.marca} por un precio de ${producto.precio} en color ${producto.color}`
         )
         
     });
@@ -33,7 +33,7 @@ function finalizarCompra(){
 }
 let arrayProductos = [];
 let opcion = prompt(
-    "Ingrese una opcion: /n 1: Elegir producto /n 3: Finalizar compra /n 4: Salir"
+    "Ingrese una opcion: /n 1: Elegir producto /n 2: Ver el carrito en consola al finalizar /n 3: Finalizar compra /n 4: Salir"
 );
 
 while (opcion !== "4") {
