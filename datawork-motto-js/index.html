@@ -18,7 +18,7 @@
         <img src="./imagenes/tuercas.png" alt="Logo Datawork">
         <h1 class="animate__animated animate__bounceInDown">DATAWORK</h1>
 
-        <!-- <nav class="navbar navbar-expand-lg bg-primary">
+       <nav class="navbar navbar-expand-lg bg-primary">
             <div class="container-fluid">
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,72 +43,34 @@
                 </ul>
               </div>
             </div>
-          </nav> -->
+          </nav>
     </header>
     <main class="principal">
-        <div class="container" id="cards">
-            <div class="row row-cols-1 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card">
-                        <img src="./imagenes/llaveros-tela.jpg" class="card-img-top" alt="Textil">
-                        <div class="card-body">
-                            <h5 class="card-title">Llavero Tela</h5>
-                            <h6>$250</h6>
-                        </div>
-                    </div>
+    
+        <div id="container" class="container">
+                
+            <div id="items" class="row" ></div>
+            <div>
+                <h2>Carrito</h2>
+                <div id="carrito"></div>
+                <hr>
+                <p id="total">Total: </p>
+                <div id="contacto">
+                    <h2>Ingrese sus datos para terminar el pedido: </h2>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre">
+                    <label for="numero">Teléfono</label>
+                    <input type="text" id="numero">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion">
+                    <button id="Enviar"  class="btn btn-outline-primary">Confirmar Compra</button>
                 </div>
-                <!-- <div>
-                    <div class="card">
-                        <img src="./imagenes/tazas.jpg" class="card-img-top" alt="Ceramica">
-                        <div class="card-body">.
-                            <h5 class="card-title">Ceramica</h5>
-                        </div>
-                    </div>
+                <div class="botones">
+                    <button id="boton-vaciar"  class="btn btn-outline-primary">Vaciar</button>
                 </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="./imagenes/cajita-madera.jpg" class="card-img-top" alt="Madera">
-                        <div class="card-body">
-                            <h5 class="card-title">Madera</h5>
-                        </div>
-                    </div>
-                </div> -->
-                <div class="col">
-                    <div class="card">
-                        <img src="./imagenes/llaveros-acrilico.jpg" class="card-img-top" alt="Acrilico">
-                        <div class="card-body">
-                            <h5 class="card-title">Llavero Acrilico</h5>
-                            <h6>$200</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="col">
-                    <div class="card">
-                        <img src="./imagenes/taza-plastico.jpg" class="card-img-top" alt="Polímero">
-                        <div class="card-body">
-                            <h5 class="card-title">Polímero</h5>
-                        </div>
-                    </div>
-                </div> -->
-                <div class="col">
-                    <div class="card">
-                        <img src="./imagenes/llavero-metal.jpg" class="card-img-top" alt="Metal">
-                        <div class="card-body">
-                            <h5 class="card-title">Llavero Metal</h5>
-                            <h6>$450</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="col">
-                    <div class="card">
-                        <img src="./imagenes/combo.jpg" class="card-img-top" alt="combo">
-                        <div class="card-body">
-                            <h5 class="card-title">Combos</h5>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-        </div>
+              
+            </div>    
+    </div>
     </main>
     <footer class="text-center text-white bg-primary">
         <div class="text-left text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">Nuestras redes</div>

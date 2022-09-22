@@ -47,17 +47,26 @@
           </nav>
 	</header>
 	<main class="principal">
-		<form class="contacto">
+		<section class="contacto" id="comprador">
 			<h2>Contacto</h2>
-			<input placeholder="Nombre completo" name="Nombre">
-			<input placeholder="Email" name="Email">
-			<input placeholder="Dejanos tu consulta" name="consulta">
-			<button class="btn-enviar">Enviar mensaje</button>
-			<div>
-				<p>Podes comunicarte por medio del formulario o en nuestras redes que aparecen abajo!</p>
+		    <div class="form">
+				<div>
+				  <div class="column-1">
+					<label for="name"> Nombre completo </label>
+					<label for="mail"> E-mail </label>
+					<label for="consulta"> Consulta</label>
+				  </div>
+				  <div class="column-2">
+					<input class="relleno" type="text" name="name" id="nombre">
+					<input class="relleno" type="text" name="mail" id="mail">
+					<input class="relleno" type="text" name="consulta" id="consulta">
+					<button class="btn" id="enviarInfo">Enviar info</button>
+				  </div>
+				</div>
 			</div>
+		  
 
-		</form>
+		</section>
 	</main>
 
 	<footer class="text-center text-white bg-primary">
@@ -79,6 +88,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
 		crossorigin="anonymous"></script>
+	<script src="./app.js"></script>
 </body>
 
 
