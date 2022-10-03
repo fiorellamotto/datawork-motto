@@ -247,7 +247,7 @@ class Cliente {
   }
   
   function cargarCarritoLocalStorage(){
-      miLocalStorage.getItem("carrito") !== null? (
+      miLocalStorage.getItem("carrito") !== null ? (
           carrito = JSON.parse(miLocalStorage.getItem("carrito")), 
           mostrarCarrito()
       ) : (
