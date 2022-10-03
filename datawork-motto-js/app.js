@@ -9,7 +9,6 @@ class Cliente {
   let boton = document.querySelector("#Enviar");
   boton.addEventListener("click", agregarCliente);
   
-  // agregado datos de cliente
   
   function agregarCliente(){
       let nombre = document.querySelector("#nombre").value;
@@ -20,24 +19,46 @@ class Cliente {
       mostrarCliente(cliente1);
   }
   
-  // eliminar elementos
   function mostrarCliente(cliente){
-      let form = document.querySelector("#items");
-      form.innerHTML ="";
-      let formulario = document.querySelector("#contacto");
-      formulario.innerHTML ="";
-      //agregar elementos
-      let nuevo = document.createElement("div");
-      nuevo.innerHTML = `
-      <h2>Muchas Gracias ${cliente.nombre}</h2>
-      <p>Sus datos fueron registrados y su compra fue exitosa. Recibira su pedido en ${cliente.direccion}</p>
-      <h3>Monto final abonado $${total}.</h3>
-      `;
-      nuevo.className= "saludoCliente"
-      formulario.appendChild(nuevo);
-      
-  
-  }
+        Swal.fire({
+            title: 'Confirmado',
+            html: `Muchas gracias ${cliente.nombre}!! <br>
+            Enviaremos su compra a ${cliente.direccion}. <br>
+            Monto final: $${total} <br>
+            `,
+            icon: "success",
+            showCancelButton: true,
+            confirmButtonColor: "#119eff",
+            confirmButtonText: "Confirmar",
+        })
+
+    if (cliente.nombre === "" & cliente.direccion ==="") {
+        Swal.fire({
+            title: 'Nombre y Direccion',
+            text: 'Registra tu nombre y direccion',
+            icon: 'warning',
+            confirmButtonText: 'Aceptar'
+        });
+            
+        
+    } else {
+    let form = document.querySelector("#items");
+    form.innerHTML ="";
+    let formulario = document.querySelector("#contacto");
+    formulario.innerHTML=""    
+    let nuevo = document.createElement("div");
+    nuevo.innerHTML = `
+    <h2>¡Gracias ${cliente.nombre}!</h2>
+    <hr>
+    <h2>Recibira su pedido en ${cliente.direccion}</h2>
+    <h3>Total pagado $${total}.</h3>
+    `;
+    nuevo.className= "saludoCliente"
+    formulario.appendChild(nuevo);
+        
+    }
+
+}
   
   
   let productos = [
@@ -70,11 +91,10 @@ class Cliente {
   const DOMtotal = document.querySelector('#total');
   const DOMbotonVaciar = document.querySelector('#boton-vaciar');
   const DOMbotonConfirmar = document.querySelector('#boton-confirmar');
-  
+  const miLocalStorage = window.localStorage;
   
   function dibujarProductos() {
       productos.forEach((producto, indice) => {
-          // Estructura
           const miNodo = document.createElement('div');
           miNodo.classList.add('card');
           miNodo.innerHTML = 
@@ -90,17 +110,36 @@ class Cliente {
   dibujarProductos();
 
   const agregarAlCarrito = (indice) => {
+    Toastify({
+        text: "Producto agregado al carrito",
+        gravity: "bottom",
+        position: "right",
+        duration: "3000",        
+        style: {            
+            background: "#548af0",
+        }
+      }).showToast();
+
       const codigoProd = carrito.findIndex((elemento)=>{
           return elemento.id === productos[indice].id;
       });
+      Swal.fire({
+        title: 'Agregado',
+        text: 'Producto agregado al carrito',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+      });
+
       const productoAgregar = productos[indice];
       codigoProd === -1 ? (        
           productoAgregar.cantidad = 1,
           carrito.push(productoAgregar), 
-          mostrarCarrito()
+          mostrarCarrito(),
+          guardarLocalStorage()
       ) : (
           carrito[codigoProd].cantidad = carrito[codigoProd].cantidad + 1,
-          mostrarCarrito()
+          mostrarCarrito(),
+          guardarLocalStorage()
       )
   };
   
@@ -133,33 +172,89 @@ class Cliente {
       DOMtotal.innerHTML=`
       <div class ="product-details" > Total: $ ${total}</div>
       ` 
-  
-     
+
       
   }
   
-  const eliminar = (indice) => {
-      carrito.splice(indice, 1);
-      mostrarCarrito();
-      total = carrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0 );
-      DOMtotal.classList.add("total-carrito-fin");
-      DOMtotal.innerHTML=`
-      <div class ="product-details" > Total: $ ${total}</div>
-      `     
-  }
+  const eliminar = (idProd) => {
+    const item = carrito.find((prod) => prod.id === idProd);
+    const indice = carrito.indexOf(item);
+    Swal.fire({
+      title: "¿Seguro que deseas eliminar este producto?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#119eff",
+      cancelButtonColor: "#ff0000",
+      confirmButtonText: "Confirmar",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+          Swal.fire({
+              title: 'Listo',
+              icon: 'success',
+              text: 'El producto ha sido eliminado'
+          })
+        carrito.splice(indice, 1);
+        mostrarCarrito();
+        guardarLocalStorage();
+        
+      }
+    });
+  };
   
+
   DOMbotonVaciar.addEventListener("click", vaciar)
   function vaciar() {
-      carrito = [];
-      total = carrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0 );
-      DOMtotal.classList.add("total-carrito-fin");
-      DOMtotal.innerHTML=`
-      <div class ="product-details" > Total: $ ${total}</div>
-      ` 
+      
+      Swal.fire({
+          title: "¿Deseas vaciar carrito?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#d33",
+          cancelButtonColor: "#3085d6",
+          confirmButtonText: "Vaciar",
+          cancelButtonText: "Cancelar",
+        }).then((result) => {
+          if (result.isConfirmed) {
+              Swal.fire({
+                  title: 'Listo',
+                  icon: 'success',
+                  text: 'Ahora el carrito se encuentra vacío'
+              })
+            carrito = [];
+            mostrarCarrito();
+            guardarLocalStorage();
+            total = carrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0 );
+          DOMtotal.classList.add("total-carrito-fin");
+          DOMtotal.innerHTML=`
+          <div class ="product-details" > Total: $ ${total}</div>
+          ` 
+          
+          }
+        });
+        
+        
       mostrarCarrito();
+      localStorage.clear();
   
   }
   
-  
-  
   DOMbotonConfirmar.addEventListener("click", agregarCliente);
+  
+  function guardarLocalStorage(){
+      miLocalStorage.setItem("carrito", JSON.stringify(carrito));
+  
+  }
+  
+  function cargarCarritoLocalStorage(){
+      miLocalStorage.getItem("carrito") !== null? (
+          carrito = JSON.parse(miLocalStorage.getItem("carrito")), 
+          mostrarCarrito()
+      ) : (
+          alert ("El carrito del LS esta vacío.")       
+  
+      )
+  }
+  
+  cargarCarritoLocalStorage();
+  
