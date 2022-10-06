@@ -135,9 +135,9 @@ const mostrarCarrito = () => {
             carritoFinal.innerHTML = `
               <div class="product-details">${producto.nombre}</div>
               <img class="card-img" src="${producto.imagen}"></img>
-              <div class ="product-details" >Cantidad:${producto.cantidad}</div>
-              <div class ="product-details" >Precio: $ ${producto.precio}</div>
-              <div class ="product-details" > Subtotal: $ ${producto.precio * producto.cantidad}</div>
+              <div class ="product-details">Cantidad:${producto.cantidad}</div>
+              <div class ="product-details">Precio: $ ${producto.precio}</div>
+              <div class ="product-details"> Subtotal: $ ${producto.precio * producto.cantidad}</div>
               <button type="button" class="btn btn-outline-primary"  id="eliminar" onclick="eliminar(${indice})">Eliminar Producto</button>`;
             DOMcarrito.appendChild(carritoFinal);
             total = carrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
@@ -145,7 +145,7 @@ const mostrarCarrito = () => {
         );
     }
     DOMtotal.classList.add("total-carrito-fin");
-    DOMtotal.innerHTML = `<div class ="product-details" > Total: $ ${total}</div>`
+    DOMtotal.innerHTML = `<div class ="product-details"> Total: $ ${total}</div>`
 }
 
 const eliminar = (idProd) => {
@@ -199,7 +199,7 @@ function vaciar() {
             guardarLocalStorage();
             total = carrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
             DOMtotal.classList.add("total-carrito-fin");
-            DOMtotal.innerHTML = `<div class ="product-details" > Total: $ ${total}</div>`
+            DOMtotal.innerHTML = `<div class ="product-details"> Total: $ ${total}</div>`
 
         }
     });
