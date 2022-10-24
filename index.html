@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="datawork, computacion, publicidad, llavero, llaveros, acrilico" >
+    <meta name="description" content="Somos una empresa familiar que en su mayoría se dedica a los artículos de publicidad.">
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="style.css">
+    <title>Datawork</title>
+</head>
+
+<body class="layout">
+    <header class="encabezado">
+        <img src="./imagenes/tuercas.png" alt="Logo Datawork">
+        <h1 class="animate__animated animate__bounceInDown">DATAWORK</h1>
+        <div id="car">
+          <a href="#carrito"><img src="./imagenes/carrito.png" alt="Carrito"></a>
+      </div>
+
+       <nav class="navbar navbar-expand-lg bg-primary">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./paginas/contacto.html">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./paginas/trabajos.html">Trabajos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./paginas/quienes-somos.html">Quienes Somos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./paginas/ubicacion.html">Ubicación</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main class="principal">
+    
+        <div id="container" class="container-sm">
+                
+            <div id="items" class="row" ></div>
+            <div>
+                <h2>Carrito</h2>
+                <div id="carrito"></div>
+                <hr>
+                <p id="total">Total: </p>
+                <div id="contacto">
+                    <h2>Ingrese sus datos para terminar el pedido: </h2>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre">
+                    <label for="numero">Teléfono</label>
+                    <input type="text" id="numero">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion">
+                    <button id="Enviar"  class="btn btn-outline-primary">Confirmar Compra</button>
+                </div>
+                <div class="botones">
+                    <button id="boton-vaciar"  class="btn btn-outline-primary">Vaciar</button>
+                </div>
+              
+            </div>    
+    </div>
+    </main>
+    <footer class="text-center text-white bg-primary">
+        <div class="text-left text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">Nuestras redes</div>
+        <div class="container pt-1">
+            <section class="mb-2">
+                <a class="btn btn-link btn-floating btn-lg text-white m-1"
+                    href="https://www.facebook.com/sublimables.datawork/" role="button" data-mdb-ripple-color="dark"><i
+                        class="bi bi-facebook"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-white m-1"
+                    href="https://www.instagram.com/sublimables.datawork/" role="button" data-mdb-ripple-color="dark"><i
+                        class="bi bi-instagram"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-white m-1"
+                    href="https://listado.mercadolibre.com.ar/_CustId_59379155?item_id=MLA886086819&category_id=MLA10060&seller_id=59379155&client=recoview-selleritems&recos_listing=true"
+                    role="button" data-mdb-ripple-color="dark"><i class="bi bi-shop"></i></a>
+            </section>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./app.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nombre": "Llavero Tela",
+        "precio": 250,
+        "imagen": "./imagenes/llaveros-tela.jpg",
+        "cantidad": 0
+    },
+    {
+        "id": 2,
+        "nombre": "Llavero Acrílico",
+        "precio": 200,
+        "imagen": "./imagenes/llaveros-acrilico.jpg",
+        "cantidad": 0
+    },
+    {
+        "id": 3,
+        "nombre": "Llavero Metal",
+        "precio": 450,
+        "imagen": "./imagenes/llavero-metal.jpg",
+        "cantidad": 0
+    }
+]
