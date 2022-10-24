@@ -16,48 +16,32 @@ function agregarCliente() {
     let direccion = document.querySelector("#direccion").value;
     let cliente1 = new Cliente(nombre, numero, direccion);
     console.log(cliente1);
-    mostrarCliente(cliente1);
-}
-
-function mostrarCliente(cliente) {
-    Swal.fire({
-        title: 'Confirmado',
-        html: `Muchas gracias ${cliente.nombre}!! <br>
-            Enviaremos su compra a ${cliente.direccion}. <br>
-            Monto final: $${total} <br>
-            `,
-        icon: "success",
-        showCancelButton: true,
-        confirmButtonColor: "#119eff",
-        confirmButtonText: "Confirmar",
-    })
-
-    if (cliente.nombre === "" & cliente.direccion === "") {
-        Swal.fire({
-            title: 'Nombre y Direccion',
-            text: 'Registra tu nombre y direccion',
-            icon: 'warning',
-            confirmButtonText: 'Aceptar'
-        });
-
-
-    } else {
-        let form = document.querySelector("#items");
-        form.innerHTML = "";
-        let formulario = document.querySelector("#contacto");
-        formulario.innerHTML = ""
-        let nuevo = document.createElement("div");
-        nuevo.innerHTML = `
-    <h2>¡Gracias ${cliente.nombre}!</h2>
+    let form = document.querySelector("#items");
+    form.innerHTML = "";
+    let formulario = document.querySelector("#contacto");
+    formulario.innerHTML = ""
+    let nuevo = document.createElement("div");
+    nuevo.innerHTML = `
+    <h2>¡Gracias ${cliente1.nombre}!</h2>
     <hr>
-    <h2>Recibira su pedido en ${cliente.direccion}</h2>
+    <h2>Recibira su pedido en ${cliente1.direccion}</h2>
     <h3>Total pagado $${total}.</h3>
     `;
-        nuevo.className = "saludoCliente"
-        formulario.appendChild(nuevo);
-
-    }
-
+    nuevo.className = "saludoCliente"
+    formulario.appendChild(nuevo);
+     mostrarCliente(cliente1);
+}
+ 
+function mostrarCliente(cliente1) {
+      Toastify({
+        text: "Cliente agregado con éxito",
+        gravity: "bottom",
+        position: "right",
+        duration: "3000",
+        style: {
+            background: "#548af0",
+        }
+    }).showToast();
 }
 
 let carrito = [];
@@ -86,6 +70,7 @@ function dibujarProductos() {
           <button class='btn btn-info' onclick="agregarAlCarrito(${producto.id})"> Comprar </button>
           `
             DOMitems.appendChild(miNodo);
+            localStorage.setItem("catalogo",JSON.stringify(data));
         }));
 };
 dibujarProductos();
@@ -101,26 +86,17 @@ const agregarAlCarrito = (id) => {
         }
     }).showToast();
     debugger
-    const codigoProd = carrito.findIndex((elemento) => {
-        return elemento.id === productos[id];
-    });
-    /*     Swal.fire({
-            title: 'Agregado',
-            text: 'Producto agregado al carrito',
-            icon: 'success',
-            confirmButtonText: 'Aceptar'
-        });
-     */
-    const productoAgregar = productos[id];
-    codigoProd === -1 ? (
-        productoAgregar.cantidad = 1,
-        carrito.push(productoAgregar),
+    const obtenerListado = JSON.parse(localStorage.getItem("catalogo"))
+    const codigoProd = obtenerListado.find((producto)=>producto.id === id)
+    console.log(codigoProd) 
+
+    codigoProd != -1 ? (
+        codigoProd.cantidad = 1,
+        carrito.push(codigoProd),
         mostrarCarrito(),
         guardarLocalStorage()
-    ) : (
-        carrito[codigoProd].cantidad = carrito[codigoProd].cantidad + 1,
-        mostrarCarrito(),
-        guardarLocalStorage()
+    ) : ( console.log("error")
+        
     )
 };
 
@@ -152,58 +128,21 @@ const eliminar = (idProd) => {
     debugger
     const item = carrito.find((prod) => prod.id == idProd);
     const indice = carrito.indexOf(item);
-    Swal.fire({
-        title: "¿Seguro que deseas eliminar este producto?",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#119eff",
-        cancelButtonColor: "#ff0000",
-        confirmButtonText: "Confirmar",
-        cancelButtonText: "Cancelar",
-    }).then((result) => {
-        if (result.isConfirmed) {
-            Swal.fire({
-                title: 'Listo',
-                icon: 'success',
-                text: 'El producto ha sido eliminado'
-            })
-            carrito.splice(indice, 1);
+    carrito.splice(indice, 1);
             mostrarCarrito();
             guardarLocalStorage();
-
-        }
-    });
 };
 
 
 DOMbotonVaciar.addEventListener("click", vaciar)
 function vaciar() {
-
-    Swal.fire({
-        title: "¿Deseas vaciar carrito?",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#d33",
-        cancelButtonColor: "#3085d6",
-        confirmButtonText: "Vaciar",
-        cancelButtonText: "Cancelar",
-    }).then((result) => {
-        if (result.isConfirmed) {
-            Swal.fire({
-                title: 'Listo',
-                icon: 'success',
-                text: 'Ahora el carrito se encuentra vacío'
-            })
-            carrito = [];
+    debugger
+    carrito = [];
             mostrarCarrito();
             guardarLocalStorage();
             total = carrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
             DOMtotal.classList.add("total-carrito-fin");
             DOMtotal.innerHTML = `<div class ="product-details"> Total: $ ${total}</div>`
-
-        }
-    });
-
 
     mostrarCarrito();
     localStorage.clear();
